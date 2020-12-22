@@ -23,7 +23,7 @@ class App extends Component {
               path="/products"
               render={(props) => <Products sortBy="name" {...props}></Products>}
             ></Route>
-            <Route path="/posts/:yy?/:mm" component={Posts}></Route>
+            <Route path="/posts/:yy/:mm?" component={Posts}></Route>
             <Route path="/admin" component={Dashboard}></Route>
             {/* If none of the previous routes render anything,
             this route acts as a fallback.
