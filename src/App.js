@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import NavBar from "./components/navbar";
 import Products from "./components/products";
 import Posts from "./components/posts";
@@ -25,13 +25,16 @@ class App extends Component {
             ></Route>
             <Route path="/posts/:yy/:mm?" component={Posts}></Route>
             <Route path="/admin" component={Dashboard}></Route>
+            <Route path="/not-found" component={NotFound}></Route>
+            <Redirect from="/messages" to="/admin"></Redirect>
             {/* If none of the previous routes render anything,
             this route acts as a fallback.
 
             Important: A route with path="/" will *always* match
             the URL because all URLs begin with a /. So that's
             why we put this one last of all */}
-            <Route path="/" component={Home}></Route>
+            <Route path="/" exact component={Home}></Route>
+            <Redirect to="/not-found"></Redirect>
           </Switch>
         </div>
       </div>
