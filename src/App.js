@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import NavBar from "./components/navbar";
 import Products from "./components/products";
 import Posts from "./components/posts";
@@ -15,10 +15,14 @@ class App extends Component {
       <div>
         <NavBar />
         <div className="content">
-          <Route path="/" exact component={Home}></Route>
-          <Route path="/products" component={Products}></Route>
-          <Route path="/posts" component={Posts}></Route>
-          <Route path="/admin" component={Dashboard}></Route>
+          <Switch>
+            //will return first path which matches with url in order of below
+            descirbed routes
+            <Route path="/products" component={Products}></Route>
+            <Route path="/posts" component={Posts}></Route>
+            <Route path="/admin" component={Dashboard}></Route>
+            <Route path="/" component={Home}></Route>
+          </Switch>
         </div>
       </div>
     );
