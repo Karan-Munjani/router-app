@@ -3,6 +3,8 @@ import React, { Component } from "react";
 class ProductDetails extends Component {
   handleSave = () => {
     // Navigate to /products
+    // this.props.history.push("/products"); will add prev url to history so back button navigates to prev URL
+    this.props.history.replace("/products"); //will replace current address with the new one so no any prev URL's Histroy
   };
 
   render() {

@@ -2,12 +2,12 @@ import React from "react";
 import queryString from "query-string";
 
 const Posts = (props) => {
-  const result = queryString.parse(props.location.search);
-  // or
-  const { sortBy, approved } = queryString.parse(props.location.search);
-  console.log(result);
-  console.log(sortBy);
-  console.log(approved);
+  // const result = queryString.parse(props.location.search);
+  // // or
+  // const { sortBy, approved } = queryString.parse(props.location.search);
+  // console.log(result);
+  // console.log(sortBy);
+  // console.log(approved);
 
   return (
     <div>
