@@ -18,11 +18,12 @@ class App extends Component {
           <Switch>
             //will return first path which matches with url in order of below
             descirbed routes
+            <Route path="/products/:id" component={ProductDetails}></Route>
             <Route
               path="/products"
               render={(props) => <Products sortBy="name" {...props}></Products>}
             ></Route>
-            <Route path="/posts" component={Posts}></Route>
+            <Route path="/posts/:yy/:mm" component={Posts}></Route>
             <Route path="/admin" component={Dashboard}></Route>
             {/* If none of the previous routes render anything,
             this route acts as a fallback.
